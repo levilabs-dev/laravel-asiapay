@@ -1,0 +1,94 @@
+{
+    "name": "levilabs/laravel-asiapay",
+    "description": "Modern Laravel SDK for the AsiaPay Payment Gateway (Iraq, asiapay.iq): JWT-signed orders, hosted checkout, status polling, refunds, and verified webhooks.",
+    "keywords": [
+        "laravel",
+        "asiapay",
+        "asiapay.iq",
+        "payment",
+        "gateway",
+        "refund",
+        "sdk",
+        "iraq",
+        "levilabs"
+    ],
+    "homepage": "https://levilabs.dev",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/levilabs-dev/laravel-asiapay/issues",
+        "source": "https://github.com/levilabs-dev/laravel-asiapay",
+        "docs": "https://github.com/levilabs-dev/laravel-asiapay#readme",
+        "security": "https://github.com/levilabs-dev/laravel-asiapay/security"
+    },
+    "authors": [
+        {
+            "name": "Levi Labs",
+            "email": "hello@levilabs.dev",
+            "homepage": "https://levilabs.dev",
+            "role": "Organization"
+        },
+        {
+            "name": "Nizam Omer",
+            "email": "nizam@nizaamomer.com",
+            "homepage": "https://nizaamomer.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "firebase/php-jwt": "^6.10",
+        "illuminate/console": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/contracts": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/database": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/http": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/support": "^11.0 || ^12.0 || ^13.0",
+        "spatie/laravel-package-tools": "^1.16"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.22",
+        "orchestra/testbench": "^9.0 || ^10.0 || ^11.0",
+        "pestphp/pest": "^3.8 || ^4.4",
+        "pestphp/pest-plugin-laravel": "^3.2 || ^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "LeviLabs\\LaravelAsiapay\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LeviLabs\\LaravelAsiapay\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "audit": {
+            "block-insecure": false
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "LeviLabs\\LaravelAsiapay\\AsiapayServiceProvider"
+            ],
+            "aliases": {
+                "AsiapayPayment": "LeviLabs\\LaravelAsiapay\\Facades\\AsiapayPayment"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
